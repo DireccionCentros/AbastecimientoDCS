@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, Link } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import MenuPrincipal from "./pages/MenuPrincipal.jsx";
 import Compras from "./pages/compras.jsx";
-import OrdenCompra from "./pages/OrdenCompra.jsx";
+import CargarProducto from "./pages/CargarProducto.jsx";
 
 function Home() {
   return (
@@ -83,6 +83,27 @@ function About() {
   );
 }
 
+function OrdenCompraPlaceholder() {
+  return (
+    <div style={styles.page}>
+      <div style={styles.card}>
+        <h1 style={styles.title}>Órdenes de Compra</h1>
+        <p style={styles.subtitle}>
+          Esta pantalla está en construcción ahora mismo.
+        </p>
+        <div style={styles.actions}>
+          <Link to="/compras" style={styles.primaryBtn}>
+            Volver a Compras
+          </Link>
+          <Link to="/menu" style={styles.secondaryBtn}>
+            Menú Principal
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function NotFound() {
   return (
     <div style={styles.page}>
@@ -106,7 +127,8 @@ export default function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/menu" element={<MenuPrincipal />} />
       <Route path="/compras" element={<Compras />} />
-      <Route path="/ordenes-compra" element={<OrdenCompra />} />
+      <Route path="/cargar-productos" element={<CargarProducto />} />
+      <Route path="/ordenes-compra" element={<OrdenCompraPlaceholder />} />
       <Route path="/home" element={<Home />} />
       <Route path="/app" element={<AppShell />} />
       <Route path="/about" element={<About />} />
